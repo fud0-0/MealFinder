@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Meal Finder</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    #content {
+      display: flex;
+      justify-content: space-between;
+    } /*nk seperate main content dgn gmbr chefwan*/
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="planner.html">Meal Planner</a>
+    <a href="grocery.html">Grocery List</a>
+  </nav>
+  <div id="content">
+    <div>
+      <h1>🕵🏾 Meal Finder</h1>
+      <input type="text" id="ingredientSearch" placeholder="Search by ingredient..."> <!-- tmpt user search -->
+      <button onclick="searchIngredient()">Search</button>
+      <p></p>
+      <select id="categorySelect" onchange="filterCategory()">
+        <option value="">Category</option>
+      </select>
+      <div id="mealResults"></div>
+    </div>
+    <div>
+      <img src="chefwan.png" alt="Chef Wan" style="max-width: 400px; max-height: 400px;">
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
