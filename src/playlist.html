@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        .player {
+            width: 300px;
+            margin: 10px;
+            padding: 15px;
+            border: 3px solid #ff5252;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="planner.html">Meal Planner</a>
+        <a href="grocery.html">Grocery List</a>
+        <a href="playlist.html">Chef Playlist</a>
+    </nav>
+    <center>
+        <h1>🎷 Playlist</h1>
+        <p>These songs are curated by some of the best chefs we know!</p>
+        <div id="music"></div>
+    </center>
+    <script>
+        const songs = [
+            { title: 'Chef Rick', file: 'music1.mp3' },
+            { title: 'Chef Bladee', file: 'music2.mp3' },
+            { title: 'Chef MCR', file: 'music3.mp3' },
+            { title: 'Chef Blu', file: 'music4.mp3' },
+            { title: 'Chef Ye', file: 'music5.mp3' }
+        ];
+
+        function playlist() {
+            const container = document.getElementById('music');
+
+            songs.forEach((x) => /*loop thru each song dlm songs*/ {
+                const player = document.createElement('div');
+                player.className = 'player';
+
+                const title = document.createElement('h3');
+                title.textContent = x.title; //rujuk kpd titles in songs
+
+                const audio = document.createElement('audio');
+                audio.src = x.file; //points to lagu apa yg nk dimainkn
+                audio.controls = true; //built in property utk tunjuk contol buttons
+
+                player.appendChild(title);
+                player.appendChild(audio);
+                container.appendChild(player);
+            });
+        }
+
+        playlist();
+    </script>
+</body>
+</html>
+        
